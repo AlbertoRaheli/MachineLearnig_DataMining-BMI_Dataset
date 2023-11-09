@@ -233,7 +233,7 @@ def pca_fun(data,i,j,classNames, categories):
     threshold95 = 0.95
     
     # Plot variance explained
-    plt.figure()
+    fig1=plt.figure()
     plt.plot(range(1,len(rho)+1),rho,'x-')
     plt.plot(range(1,len(rho)+1),np.cumsum(rho),'o-')
     plt.plot([1,len(rho)],[threshold95, threshold95],'k--')
@@ -243,13 +243,13 @@ def pca_fun(data,i,j,classNames, categories):
     plt.legend(['Individual','Cumulative','Threshold'])
     plt.grid()
     plt.show()
-
+    fig1.savefig("../Data/PCA/pca1.png")
     # Indices of the principal components to be plotted
     #i = 0
     #j = 20
     
     # Plot PCA of the data
-    plt.figure()
+    fig2=plt.figure()
     plt.title('Bodyfat: PC{0} '.format(i+1) + 'vs PC{0}'.format(j+1))
     
     C = len(classNames)
@@ -271,10 +271,11 @@ def pca_fun(data,i,j,classNames, categories):
     
     # Output result to screen
     plt.show()
+    fig2.savefig("../Data/PCA/pca2.png")
 
     # Components that explain more than 95 percent of the variance.
     # Let's look at their coefficients:
-    plt.figure()
+    fig3=plt.figure()
     pcs = [0,1,2,3]
     legendStrs = ['PC'+str(e+1) for e in pcs]
     c = ['r','k','b','y']
@@ -295,8 +296,10 @@ def pca_fun(data,i,j,classNames, categories):
     plt.title('Body fat: PCA Component Coefficients')
     plt.show()
     print('PCA done')
+    fig3.savefig("../data/PCA/pca3.png")
     
 i=0
 j=1
 pca_fun(data,i,j,classNames,categories)    
+    
     
