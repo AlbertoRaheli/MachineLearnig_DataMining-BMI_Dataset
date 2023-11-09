@@ -164,7 +164,7 @@ for train_index, test_index in CV.split(X,y):
         ylabel('Squared error',fontsize=30)
         legend(['Train error','Test error'], fontsize=30)
         grid()
-        savefig("../data/images/regularization.png")
+        savefig("../data/lin_regression/regularization.png")
 
     # To inspect the used indices, use these print statements
     #print('Cross validation fold {0}/{1}:'.format(k+1,K))
@@ -200,6 +200,6 @@ weight = w_rlr[1:,-1]
 ax.bar(attributes, weight)
 plt.xticks(rotation=90)
 plt.grid(axis='y')
-plt.savefig("../data/images/attributes_weight.png")
+plt.savefig("../data/lin_regression/attributes_weight.png")
 plt.show()
 
