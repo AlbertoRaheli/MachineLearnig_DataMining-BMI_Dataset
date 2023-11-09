@@ -29,7 +29,7 @@ def remove_from_matrix(X,i,column=True):
     X = X[:,X_cols]
     return y,X
 
-data = pd.read_csv("../data/modified_bodyfat_dataset.txt", sep="\t") # with BMI
+data = pd.read_csv("../dataset/modified_bodyfat_dataset.txt", sep="\t") # with BMI
 
 # isolate target column as label array
 target_index = list(data.columns).index("PBF [%]")
